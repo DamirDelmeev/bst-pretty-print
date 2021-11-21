@@ -1,11 +1,12 @@
 package com.epam.rd.autocode.bstprettyprint;
 
-public interface PrintableTree {
+public interface PrintableTree<E> {
+    static PrintableTree getInstance() {
+        return new Tree();
+    }
 
     void add(int i);
-    String prettyPrint();
 
-    static PrintableTree getInstance() {
-        throw new UnsupportedOperationException();
-    }
+    String prettyPrint();
 }
+
